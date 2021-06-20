@@ -263,13 +263,9 @@ struct HolidayHelper
         let day = calendar.component(.day, from: thisDate)
         let weekday = calendar.component(.weekday, from: thisDate)
 
-        // let weekNumber = calendar.component(.weekOfMonth, from: pickerOutlet.date)
-
         let instancesOfDay = ((day - 1) / 7) + 1  // Calculate how many times this day of the week came up this month.
 
         var holidayArray = [String]()
-
-        // var holidayString = NSLocalizedString("Not a holiday", comment: "") //= "Not a holiday"
 
         holidayArray.append(contentsOf: checkForHolidayOnSpecific(date: thisDate))
 
@@ -299,13 +295,8 @@ struct HolidayHelper
             holidayArray.append( NSLocalizedString("Good Friday", comment: "")) // "Good Friday"
         }
 
-        // var (palmMonth, palmDay) = calculateEaster(y: year)
-
         var palmDay = easterDay - 7
         var palmMonth = easterMonth
-
-        // palmDay = easterDay - 7
-        // palmMonth = easterMonth
 
         if palmDay < 1
         {
@@ -347,9 +338,6 @@ struct HolidayHelper
         {
             holidayArray.append( NSLocalizedString("Not a holiday", comment: "")) // = "Not a holiday"
         }
-
-//        print("Holiday array contains: ", holidayArray)
-//        print("Done with array.")
 
         return holidayArray
     }
@@ -455,4 +443,5 @@ struct HolidayHelper
         }
 
         return (month: month, day: day)
-    }}
+    }
+}
